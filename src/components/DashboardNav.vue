@@ -17,7 +17,7 @@
     },
     methods: {
       logout() {
-        const res = fetch(`${this.API_URL}/logout`, {
+        fetch(`${this.API_URL}/logout`, {
           method: 'POST',
           credentials: 'include',
           headers: {
@@ -29,10 +29,6 @@
             status: response.status,
           })).then(res => res)
         );
-
-        // if (res.status != 200) // do something
-
-        if (res.data.success) this.$router.push('/');
       }
     }
   }

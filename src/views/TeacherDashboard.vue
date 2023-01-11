@@ -1,7 +1,7 @@
 <template>
   <DashboardNav />
-  <h1>Student Dashboard</h1>
-  <UserModel v-if="student!={}" :user="student" :photo="photo" :uid="student.School.sid"/>
+  <h1>Teacher Dashboard</h1>
+  <UserModel v-if="teacher!={}" :user="teacher" :photo="photo" :uid="teacher.School.tid"/>
 </template>
 
 <script>
@@ -9,7 +9,7 @@
   import DashboardNav from '@/components/DashboardNav.vue';
 
   export default {
-    name: 'StudentDashboard',
+    name: 'TeacherDashboard',
     components: {
       UserModel,
       DashboardNav,
@@ -17,16 +17,14 @@
     data: () => {
       return {
         API_URL: process.env.VUE_APP_API_URL,
-        student: {},
-        locker: {},
-        contacts: [],
+        teacher: {},
         photo: {},
         message: "", // where we store any error messages etc.
       };
     },
     methods: {
       async isAuthenticated() {
-        const res = await fetch(`${this.API_URL}/student`, {
+        const res = await fetch(`${this.API_URL}/teacher`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -43,11 +41,9 @@
 
         if (res.data.success) {
           // set local data
-          this.student = res.data.response.student;
-          this.locker = res.data.response.locker;
-          this.contacts = res.data.response.contacts;
+          this.teacher = res.data.response.teacher;
           this.photo = res.data.response.photo;
-        } else this.$router.push('/student/login');
+        } else this.$router.push('/teacher/login');
       }
     },
     created() {

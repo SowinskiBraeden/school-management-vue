@@ -24,7 +24,27 @@ const routes = [
     path: '/student/dashboard',
     name: 'studentDashboard',
     component: () => import('../views/StudentDashboard.vue')
-  }
+  },
+  {
+    path: '/teacher/login',
+    name: 'teacherLogin',
+    component: () => import('../views/TeacherLogin.vue')
+  },
+  {
+    path: '/teacher/dashboard',
+    name: 'teacherDashboard',
+    component: () => import('../views/TeacherDashboard.vue')
+  },
+  {
+    path: '/admin/login',
+    name: 'adminLogin',
+    component: () => import('../views/AdminLogin.vue')
+  },
+  {
+    path: '/admin/dashboard',
+    name: 'adminDashboard',
+    component: () => import('../views/AdminDashboard.vue')
+  },
 ]
 
 const router = createRouter({

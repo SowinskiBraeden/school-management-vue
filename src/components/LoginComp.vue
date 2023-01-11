@@ -4,6 +4,7 @@
  -->
 <template>
   <div>
+    <router-link to="/">Home</router-link>
     <h1 style="text-transform: capitalize;">{{user}} login</h1>
     <form @submit.prevent="login">
       <input v-model="uid" :placeholder="user.charAt(0).toUpperCase() + user.slice(1) + ' ID'"/>

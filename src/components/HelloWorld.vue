@@ -1,4 +1,11 @@
 <template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/student/login">Student Login</router-link> |
+    <router-link to="/teacher/login">Teacher Login</router-link> |
+    <router-link to="/admin/login">Admin Login</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
